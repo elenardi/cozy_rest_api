@@ -42,10 +42,7 @@ class SpaceController {
         try{
             const allSpace = await space.findAll()
             if(allSpace.length > 0){
-                res.status(200).json({
-                    message: "List Of Space",
-                    data: allSpace
-                })
+                res.status(200).json(allSpace)
             }else{
                 res.status(200).json({
                     message: "Data Not Found"
