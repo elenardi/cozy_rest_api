@@ -136,7 +136,7 @@ const Space = (sequelizeInstance) => {
             }
         },
         photos: { 
-            type: Sequelize.STRING, 
+            type: Sequelize.TEXT, 
             allowNull: false,
             validate: {
                 notNull: {
