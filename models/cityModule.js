@@ -37,6 +37,11 @@ const City = (sequelizeInstance) => {
                 }
             }
         },
+        isPopular: {
+            type: Sequelize.BOOLEAN,
+            allowNull: false,
+            default: false,
+        }
     }, {
         freezeTableName: true, //no add s in table name
         paranoid: true, //

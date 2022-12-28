@@ -3,7 +3,7 @@ const cityRepository = models.City
 
 class CityController {
     static async createCity (req, res){
-        const {name, imageUrl} = req.body;
+        const {name, imageUrl, isPopular} = req.body;
         // const user = jwt.verify(req.cookies.refreshToken, process.env.REFRESH_TOKEN_SECRET, (error, decoded) => {
         //     if(error) return res.sendStatus(403);
         //     return decoded
@@ -12,6 +12,7 @@ class CityController {
             await cityRepository.create({
                 name: name,
                 imageUrl: imageUrl,
+                isPopular: isPopular,
             })
             res.json({msg: "Created City Success"})
         }catch (error){
