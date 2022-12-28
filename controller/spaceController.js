@@ -1,5 +1,5 @@
 const models = require('../models/index')
-const space = models.Space
+const spaceRepository = models.Space
 
 class SpaceController {
     static async createSpace (req, res){
@@ -9,7 +9,7 @@ class SpaceController {
         //     return decoded
         // })
         try{
-            await space.create({
+            await spaceRepository.create({
                 name: name,
                 city: city,
                 country: country,
@@ -40,7 +40,7 @@ class SpaceController {
 
     static async getSpace (req, res){
         try{
-            const allSpace = await space.findAll()
+            const allSpace = await spaceRepository.findAll()
             if(allSpace.length > 0){
                 res.status(200).json(allSpace)
             }else{
