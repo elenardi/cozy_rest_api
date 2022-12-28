@@ -2,6 +2,7 @@ const dbConfig = require('../config/database')
 const Sequelize = require('sequelize')
 
 const Space = require('./spaceModel')
+const City = require('./cityModule')
 
 const sequelizeInstance = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host: dbConfig.HOST,
@@ -18,5 +19,6 @@ const sequelizeInstance = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PAS
 const db = {};
 db.sequelizeInstance = sequelizeInstance
 db.Space = Space(sequelizeInstance)
+db.City = City(sequelizeInstance)
 
 module.exports = db
